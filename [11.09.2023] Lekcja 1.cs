@@ -78,7 +78,10 @@ int pom;
 for (int i = 1; i <= 10000; i++)
 {
     pom = sumaDzielnikowWlasciwych(i);
-    if ()
+    if (i == sumaDzielnikowWlasciwych(pom) && i != pom)
+    {
+        Console.WriteLine(i + " " + pom);
+    }
 }
 
 // Macierz
