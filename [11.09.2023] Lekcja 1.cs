@@ -102,3 +102,5 @@ foreach (var l in list)
 {
     Console.WriteLine(l + " ");
 }
+
+// Macierz cyfr - sumy kolejnych ramek w macierzy kwadratowej o n parzystym
