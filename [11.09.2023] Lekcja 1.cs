@@ -83,3 +83,22 @@ for (int i = 1; i <= 10000; i++)
         Console.WriteLine(i + " " + pom);
     }
 }
+
+// Zad 5 Tablice, Listy
+
+Random r = new Random();
+int n = 30;
+int[] T = new int[n];
+for (int i = 0; i < n; i++) T[i] = r.Next(100, 1000);
+for (int i = 0; i < n; i++) Console.WriteLine(T[i] + " ");
+Console.WriteLine("\n");
+List<int> list = new List<int>();
+/*ArrayList al = new ArrayList();*/
+foreach (var t in T)
+{
+    if (t % 17 == 0) list.Add(t);
+}
+foreach (var l in list)
+{
+    Console.WriteLine(l + " ");
+}
