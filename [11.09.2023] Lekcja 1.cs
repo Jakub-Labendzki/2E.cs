@@ -105,34 +105,67 @@ foreach (var l in list)
 
 // Macierz cyfr - sumy kolejnych ramek w macierzy kwadratowej o n parzystym
 
+using System;
 
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Podaj rozmiar macierzy kwadratowej (n parzyste): ");
+        int n = int.Parse(Console.ReadLine());
+        int[,] macierz = new int[n, n];
+        Console.WriteLine("Wprowadź elementy macierzy:");
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                Console.Write("Element [{0},{1}]: ", i, j);
+                macierz[i, j] = int.Parse(Console.ReadLine());
+            }
+        }
+        int sumaRamek = 0;
+        int rama = 1;
+        while (rama <= n / 2)
+        {
+            for (int i = rama - 1; i < n - rama + 1; i++)
+            {
+                sumaRamek += macierz[rama - 1, i]; // Górna rama
+                sumaRamek += macierz[n - rama, i]; // Dolna rama
+                sumaRamek += macierz[i, rama - 1]; // Lewa rama
+                sumaRamek += macierz[i, n - rama]; // Prawa rama
+            }
+            rama++;
+        }
+        Console.WriteLine("Suma kolejnych ramek: " + sumaRamek);
+        Console.ReadKey();
+    }
+}
 
+// 1. User podaje NWD i NWW dwóch liczb. Napisz program, który znajdzie te liczby.
+// 2. Sprawdź czy suma dwóch ułamków podanych przez usera jest ułamkiem niewłaściwym.
+// 3. Sprawdź czy wieksza jest suma dwóch wpisanych przez usera ułamków czy suma ich odwrotności.
+// 4. Sprawdź czy w danym napisie więcej jest spółgłosek czy samogłosek.
+// 5. Podaj której literki jest najwięcej w podanym napisie i jaka to jest literka.
 
-1. User podaje NWD i NWW dwóch liczb. Napisz program, który znajdzie te liczby.
-2. Sprawdź czy suma dwóch ułamków podanych przez usera jest ułamkiem niewłaściwym.
-3. Sprawdź czy wieksza jest suma dwóch wpisanych przez usera ułamków czy suma ich odwrotności.
-4. Sprawdź czy w danym napisie więcej jest spółgłosek czy samogłosek.
-5. Podaj której literki jest najwięcej w podanym napisie i jaka to jest literka.
+// 6. Znajdź trzy takie liczby, których suma, a także suma każdej pary tych liczb jest kwadratem innej liczby.
 
-6. Znajdź trzy takie liczby, których suma, a także suma każdej pary tych liczb jest kwadratem innej liczby.
-
-7. Dwie wieżyce, jedna wysokości 30 stóp, druga 40 stóp, oddalone są od siebie o 50 stóp. 
+// 7. Dwie wieżyce, jedna wysokości 30 stóp, druga 40 stóp, oddalone są od siebie o 50 stóp. 
 Pomiędzy nimi znajduje się wodotrysk, do którego zlatują dwa ptaki z wierzchołków obu wieżyc 
 i lecąc z jednakową prędkością przybywają w tym samym czasie. 
 Napisz program, który obliczy jest dłuższa odległość pozioma wodotrysku jednej z wieżyc?
 
-8. Brajanek z Dżesiką grają w siedem. Gra polega na tym, że jeden z graczy podaje granice przedziału <a, b> 
+// 8. Brajanek z Dżesiką grają w siedem. Gra polega na tym, że jeden z graczy podaje granice przedziału <a, b> 
 a drugi z nich musi szybko odpowiedzieć, ile w tym przedziale jest liczb, 
 które są podzielne przez siedem, albo suma ich cyfr jest podzielna przez siedem (lub jedno i drugie). 
 Napisz program, który pomaga w takich obliczeniach.
 
-9. Halinka wspina się na schody w centrum handlowym. Za każdym razem, gdy dziewczynka wspina się na nowe schody, 
+// 9. Halinka wspina się na schody w centrum handlowym. Za każdym razem, gdy dziewczynka wspina się na nowe schody, 
 zaczyna liczyć na głos po kolei od 1 do ilości stopni. Na przykład, 
 jeśli wspina się na dwa zestawy schodów – jeden z 3 stopniami, a drugi z 4 stopniami – 
 będzie liczyć tak: 1, 2, 3, 1, 2, 3, 4. Masz dane wszystkie liczby, które Halinka wypowiedziała 
 podczas całej swojej wycieczki po centrum i Twoim zadaniem jest obliczenie, ile zestawów schodów „zaliczyła”.
 
-10. Brajanek wybrał się na spacer do parku. Przysiadł na chwilę na parkowej ławce i obserwował
+// 10. Brajanek wybrał się na spacer do parku. Przysiadł na chwilę na parkowej ławce i obserwował 
 przechadzających się ludzi.
 W parku znajduje się n ławek ponumerowanych od 1 do n. Kiedy Brajanek zaczął swoje
 obserwacje, na i-tej ławce siedziało ai osób. Do parku przybyło właśnie m osób i każda chciałaby
