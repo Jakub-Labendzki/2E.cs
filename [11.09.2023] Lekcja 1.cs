@@ -142,6 +142,27 @@ class Program
 }
 
 // 1. User podaje NWD i NWW dwóch liczb. Napisz program, który znajdzie te liczby.
+
+static int nwd(int a, int b)
+{
+    while (b != 0)
+    {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+static int nww(int a, int b)
+{
+    return a * b / nwd(a, b);
+}
+
+int x, y;
+x = int.Parse(Console.ReadLine());
+y = int.Parse(Console.ReadLine());
+Console.WriteLine(nwd(x, y));
+
 // 2. Sprawdź czy suma dwóch ułamków podanych przez usera jest ułamkiem niewłaściwym.
 // 3. Sprawdź czy wieksza jest suma dwóch wpisanych przez usera ułamków czy suma ich odwrotności.
 // 4. Sprawdź czy w danym napisie więcej jest spółgłosek czy samogłosek.
