@@ -224,6 +224,13 @@ else
 
 // 5. Podaj której literki jest najwięcej w podanym napisie i jaka to jest literka.
 
+string napis = Console.ReadLine();
+char[] literki = napis.ToCharArray();
+int[] ints = new int[100];
+foreach (char c in literki)
+    ints[(int)c]++;
+Console.WriteLine(literki[ints.Max()]);
+
 // 6. Znajdź trzy takie liczby, których suma, a także suma każdej pary tych liczb jest kwadratem innej liczby.
 
 // 7. Dwie wieżyce, jedna wysokości 30 stóp, druga 40 stóp, oddalone są od siebie o 50 stóp. 
