@@ -204,8 +204,24 @@ Console.WriteLine(wynik);
 
 // 3. Sprawdź czy wieksza jest suma dwóch wpisanych przez usera ułamków czy suma ich odwrotności.
 
+int a = int.Parse(Console.ReadLine());
+int b = int.Parse(Console.ReadLine());
+int c = int.Parse(Console.ReadLine());
+int d = int.Parse(Console.ReadLine());
+
+if ((a / c) + (b / d) > (c / a) + (d / b))
+{
+    Console.WriteLine(true);
+}
+else
+{
+    Console.WriteLine(false);
+}
 
 // 4. Sprawdź czy w danym napisie więcej jest spółgłosek czy samogłosek.
+
+
+
 // 5. Podaj której literki jest najwięcej w podanym napisie i jaka to jest literka.
 
 // 6. Znajdź trzy takie liczby, których suma, a także suma każdej pary tych liczb jest kwadratem innej liczby.
