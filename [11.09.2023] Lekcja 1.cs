@@ -220,7 +220,20 @@ else
 
 // 4. Sprawdź czy w danym napisie więcej jest spółgłosek czy samogłosek.
 
-
+int sg = 0;
+int wg = 0;
+String napis = Console.ReadLine();
+for (int i = 0; i < napis.Length; i++)
+{
+    if (napis[i] == 'a' || napis[i] == 'e' || napis[i] == 'i' || napis[i] == 'o' || napis[i] == 'u' || napis[i] == 'y')
+    {
+        sg++;
+    }
+    else
+    {
+       wg++;
+    }
+}
 
 // 5. Podaj której literki jest najwięcej w podanym napisie i jaka to jest literka.
 
