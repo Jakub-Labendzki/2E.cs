@@ -163,8 +163,48 @@ x = int.Parse(Console.ReadLine());
 y = int.Parse(Console.ReadLine());
 Console.WriteLine(nwd(x, y));
 
-// 2. Sprawdź czy suma dwóch ułamków podanych przez usera jest ułamkiem niewłaściwym.
+// 2. Sprawdź czy suma dwóch ułamków podanych przez usera jest ułamkiem niewłaściwym
+
+static string ulamki(int a, int b, int c, int d)
+{
+    int x = b;
+    int y = d;
+    int iloczyn = x * y;
+
+    while (y > 0)
+    {
+        int temp = y;
+        y = x % y;
+        x = temp;
+    }
+
+    int nww = iloczyn / x;
+    int e = nww / b * a;
+    int f = nww / d * c;
+    int g = e + f;
+
+    if (g > nww)
+    {
+        return "Ułamek jest niewłaściwy";
+    }
+    else
+    {
+        return "Ułamek jest właściwy";
+    }
+}
+
+int x, y, a, b;
+x = int.Parse(Console.ReadLine());
+y = int.Parse(Console.ReadLine());
+a = int.Parse(Console.ReadLine());
+b = int.Parse(Console.ReadLine());
+
+string wynik = ulamki(a, b, x, y);
+Console.WriteLine(wynik);
+
 // 3. Sprawdź czy wieksza jest suma dwóch wpisanych przez usera ułamków czy suma ich odwrotności.
+
+
 // 4. Sprawdź czy w danym napisie więcej jest spółgłosek czy samogłosek.
 // 5. Podaj której literki jest najwięcej w podanym napisie i jaka to jest literka.
 
