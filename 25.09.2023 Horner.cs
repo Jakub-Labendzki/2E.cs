@@ -31,6 +31,9 @@ int bin2dec(string bin)
     return (int)wynik;
 }
 
+int binik = int.Parse(Console.ReadLine());
+Console.WriteLine(bin2dec(binik));
+
 string dec2bin(int dec)
 {
     string wynik = "";
