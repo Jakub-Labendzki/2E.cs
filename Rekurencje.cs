@@ -50,3 +50,24 @@ int reku(int n)
 Console.WriteLine(reku(6));
 
 -----------------------------------------------------
+//Suma dla liczb 12,23,34,45
+int n = 3;
+int suma4 = 0;
+for (int i = 0; i < n; i++)
+{
+    suma4 = suma4 + 1 + (i+1) * 11;
+}
+Console.WriteLine(suma4);
+
+int reku(int n)
+{
+    if (n == 1) return 12;
+    return reku(n - 1) + 11;
+}
+int suma = 0;
+for (int i = 0;i < 3;i++)
+{
+    suma += reku(i + 1);
+    Console.WriteLine(suma);
+}
+-----------------------------------------------------
