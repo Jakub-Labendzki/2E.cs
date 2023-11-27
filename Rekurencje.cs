@@ -71,3 +71,16 @@ for (int i = 0;i < 3;i++)
     Console.WriteLine(suma);
 }
 -----------------------------------------------------
+//Wypisz pierwsz wyrazy w wierszu 1,5 , 1, 0,5, -0,5, -2, -4,5 , -8,5, -15
+double reku(int n)
+{
+    if (n == 1) return 1.5;
+    if (n == 2) return 1;
+    if (n == 3) return 0.5;
+    return reku(n-1) * 2 - reku(n-3);
+}
+int n = 9;
+for (int i = 0; i < n; i++)
+{
+    Console.WriteLine(reku(i+1));
+}
