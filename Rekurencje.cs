@@ -14,6 +14,7 @@ int reku(int n)
 }
 Console.WriteLine(reku(9));
 
+-----------------------------------------------------
 
 //Suma przystych
 
@@ -30,3 +31,22 @@ int requ(int n)
     return requ(n - 2) + n;
 }
 Console.WriteLine(requ(98));
+
+----------------------------------------------------
+//Suma dla liczb 3,6,9,12
+int n = 6;
+int suma3 = 0;
+for (int i = 0; i < n; i++)
+{
+    suma3 += 3 * i + 3;
+}
+Console.WriteLine(suma3);
+
+int reku(int n)
+{
+    if (n == 1) return 3;
+    return reku(n - 1) + 3 * n;
+}
+Console.WriteLine(reku(6));
+
+-----------------------------------------------------
