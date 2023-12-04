@@ -84,3 +84,61 @@ for (int i = 0; i < n; i++)
 {
     Console.WriteLine(reku(i+1));
 }
+
+
+------------------------------------------------------------------------------------
+//Rekurencje pt.2
+//Zad 1
+int reku(int n)
+{
+    if (n == 1) return 2;
+    if (n == 2) return 3;
+    if (n == 3) return 4;
+    return reku(n - 1) - (reku(n - 2) + reku(n - 3));
+}
+int n = int.Parse(Console.ReadLine());
+for (int i = 0; i < n; i++)
+{
+    Console.WriteLine(reku(i + 1));
+}
+
+
+
+// Zad 2
+int reku1(int n)
+{
+    if (n == 1) return 1;
+    if (n == 2) return 4;
+    if (n == 3) return 3;
+    if (reku1(n - 1) % 2 == 0)
+    {
+        return reku1(n) * 2;
+    }
+    if (reku1(n - 1) % 2 == 1)
+    {
+        return reku1(n) + 2;
+    }
+}
+int n = int.Parse(Console.ReadLine());
+for (int i = 0; i < n; i++)
+{
+    Console.WriteLine(reku1(n + 1));
+}
+
+
+//Zad 3
+int n = int.Parse(Console.ReadLine());
+int suma = 0;
+while (n > 0)
+{
+    suma += n % 10;
+    n /= 10;
+}
+Console.WriteLine(suma);
+
+int sumik(int n)
+{
+    if (n == 0) return 0;
+    return sumik(n / 10) + n % 10;
+}
+Console.WriteLine(sumik(suma));
